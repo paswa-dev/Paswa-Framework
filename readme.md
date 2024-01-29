@@ -6,8 +6,8 @@
 * Quick Access to Modules, Remotes, or Services.
 
 ### Implementation (Script Name: Bootloader)
-- Create 1 Local Script (Optionally you can add one into StarterCharacterScripts)
-- Create 1 Script
+- Create 1 Local Script/Script (Optionally you can add one into StarterCharacterScripts)
+> Script and LocalScript should be placed in StarterPlayerScripts or ServerScriptStorage
 - Modules contained under the bootloader 
 ```lua
 --// Example Bootload Module
