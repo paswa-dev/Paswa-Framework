@@ -2,7 +2,7 @@
 * Modular
 * Lightweight
 * Flexible
-* Reduces Repetitve :GetService Calls by caching services locally.
+* --Reduces Repetitve :GetService Calls by caching services locally.-- (not yet implemented)
 * Quick Access to Modules, Remotes, or Data.
 
 ## Tips for structuring
