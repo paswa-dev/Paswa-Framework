@@ -17,7 +17,21 @@ local function parse(base, path)
 end
 
 function _G.get(path: string, base: Instance?)
-
+	local complete_path = parse(base or Modules, path)
+	if complete_path then
+		return require(complete_path) or {}
+	end
 end
 
-function
+for _, exec in next, script:GetDescendents() do
+	local file = require(exec)
+	if file then
+		if file["init"] then
+			file.init(Linked) --// Inject main table
+		else
+			debug.traceback(`init was not found in {exec.Name}`)
+		end
+	else
+		debug.traceback("Failed to load...")
+	end
+end
