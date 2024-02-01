@@ -1,4 +1,6 @@
 local Root = script.Parent
+local Replicated = game:GetService("ReplicatedStorage")
+local Remotes = Replicated:WaitForChild("Networking")
 local Modules = Root:WaitForChild("Modules")
 
 local Linked = {}
@@ -23,11 +25,16 @@ function _G.get(path: string, base: Instance?)
 	end
 end
 
+function _G.remote(path: string)
+	return parse(Remotes, path)
+end
+
 for _, exec in next, script:GetDescendents() do
 	local file = require(exec)
 	if file then
 		if file["init"] then
-			file.init(Linked) --// Inject main table
+			file.init() --// Inject main table
+			file.framework = framework
 		else
 			debug.traceback(`init was not found in {exec.Name}`)
 		end
