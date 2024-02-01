@@ -18,7 +18,7 @@ Place Bootloaders under corresponding areas.
 
 > -> StarterPlayerScripts
 
-## Syntax Usage
+## Syntax Usage (Examples are a bit dumb, use your own logic when using this framework)
 > Formatting Option #1
 ```lua
 --// Round.lua
